@@ -1,4 +1,5 @@
 # tuirsync
+
 [Version 0.1.0](https://semver.org/)
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -37,21 +38,21 @@ Here are some of the things you can do to help.
 
 ### Contribute as a community
 
-- The best way to help is **to actually talk about Alpen** as much as you can in blog posts and articles, or on social media.
-- You can answer questions in [the issue tracker](https://github.com/eugeneyng/alpen/issues) to help other community members.
+- The best way to help is **to actually talk about tuirsync** as much as you can in blog posts and articles, or on social media.
+- You can answer questions in [the issue tracker](https://github.com/eugeneyng/tuirsync/issues) to help other community members.
 - You can financially support development [on Ko-Fi](https://ko-fi.com/eugeneng) or by subscribing to [a paid account]() (coming soon).
 
 ### Contribute as a developer
 
 - Read our [Contribution Guide]() (planned).
-- Look for [issues labelled ‘Bugs’]() if you are looking to have an immediate impact on Monica.
+- Look for [issues labelled ‘Bugs’]() if you are looking to have an immediate impact on tuirsync.
 - Look for [issues labelled ‘Help Wanted’](). These are issues that you can solve relatively easily.
 - Look for [issues labelled ’Good First Issue’](). These issues are for people who want to contribute, but try to work on a small feature first.
 - If you are an advanced developer, you can try to tackle [issues labelled ‘Feature Requests’](). These are harder to do and will require a lot of back-and-forth with the repository administrator to make sure we are going to the right direction with the product.
 
 ### Donate
 
-You can support the development of Homa [on Ko-Fi](https://ko-fi.com/eugeneng). Thanks for your help.
+You can support the development of tuirsync [on Ko-Fi](https://ko-fi.com/eugeneng). Thanks for your help.
 
 ## Acknowledgements
 
@@ -69,16 +70,16 @@ See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/eugeneyng/alpen.svg
-[contributors-url]: https://github.com/eugeneyng/alpen/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/eugeneyng/alpen.svg
-[forks-url]: https://github.com/eugeneyng/alpen/network/members
-[stars-shield]: https://img.shields.io/github/stars/eugeneyng/alpen.svg
-[stars-url]: https://github.com/eugeneyng/alpen/stargazers
-[issues-shield]: https://img.shields.io/github/issues/eugeneyng/alpen.svg
-[issues-url]: https://github.com/eugeneyng/alpen/issues
-[license-shield]: https://img.shields.io/github/license/eugeneyng/alpen.svg
-[license-url]: https://github.com/eugeneyng/alpen/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/eugeneyng/tuirsync.svg
+[contributors-url]: https://github.com/eugeneyng/tuirsync/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/eugeneyng/tuirsync.svg
+[forks-url]: https://github.com/eugeneyng/tuirsync/network/members
+[stars-shield]: https://img.shields.io/github/stars/eugeneyng/tuirsync.svg
+[stars-url]: https://github.com/eugeneyng/tuirsync/stargazers
+[issues-shield]: https://img.shields.io/github/issues/eugeneyng/tuirsync.svg
+[issues-url]: https://github.com/eugeneyng/tuirsync/issues
+[license-shield]: https://img.shields.io/github/license/eugeneyng/tuirsync.svg
+[license-url]: https://github.com/eugeneyng/tuirsync/blob/master/LICENSE
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
 [Alpine.js]: https://img.shields.io/badge/Alpine.js-8BC0D0?logo=alpinedotjs&logoColor=fff
 [Alpine-url]: https://alpinejs.dev/
