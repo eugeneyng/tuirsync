@@ -24,9 +24,18 @@
 
 ## Introduction
 
+tuirsync is a textual-made terminal front-end for rsync transfers. 
+
 ### Features
 
+- File Transfer via Rsync
+- SSH Management
+  - Loading
+  - Saving
+
 ## Installation
+
+- TODO: Compiled binary to be placed in /usr/bin for usage
 
 ## Usage
 
@@ -56,8 +65,8 @@ You can support the development of tuirsync [on Ko-Fi](https://ko-fi.com/eugenen
 
 ## Acknowledgements
 
-* [![Alpine][Alpine.js]][Alpine-url]
-* [![Docker][Docker]][Docker-url]
+* [![Python][Python]][Python-url]
+* [![Textual][Textual]][Textual-url]
 
 ## License
 
@@ -81,8 +90,12 @@ See `LICENSE` for more information.
 [license-shield]: https://img.shields.io/github/license/eugeneyng/tuirsync.svg
 [license-url]: https://github.com/eugeneyng/tuirsync/blob/master/LICENSE
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
-[Alpine.js]: https://img.shields.io/badge/Alpine.js-8BC0D0?logo=alpinedotjs&logoColor=fff
+[Alpine]: https://img.shields.io/badge/Alpine.js-8BC0D0?logo=alpinedotjs&logoColor=fff
 [Alpine-url]: https://alpinejs.dev/
 [Docker]: https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff
 [Docker-url]: https://docker.com/
-[Git-url]: https://git-scm.com/
+[Git]: https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff
+[Git-url]: https://git-scm.com
+[Python]: https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff
+[Python-url]: https://www.python.org
+[Textual]: https://img.shields.io/badge/Textual-FFFFFF?logo=textual&logoColor=fff
