@@ -52,10 +52,12 @@ class Menu(textual.screen.ModalScreen):
         # Handle menu item selection
         if event.list_view.index == 0:
             self.app.push_screen(NewSSHScreen())
+        if event.list_view.index == 1:
+            self.app.push_screen(LoadSSHScreen())
 
 
 class NewSSHScreen(textual.screen.ModalScreen):
-    # Screen to input SSH connection settings (url, user, pass)
+    # Screen to input SSH connection settings (host, user, pass)
     BINDINGS = [("escape,q", "dismiss", "Close New SSH Screen")]
 
     CSS = """
@@ -66,6 +68,9 @@ class NewSSHScreen(textual.screen.ModalScreen):
     }
     """
 
+    def action_dismiss(self) -> None:
+        self.dismiss()
+
     def on_mount(self):
         self.notify("New SSH Connection...")
 
@@ -74,6 +79,13 @@ class NewSSHScreen(textual.screen.ModalScreen):
         yield textual.widgets.Footer()
         with textual.containers.Container():
             yield textual.widgets.Label("SSH Connection Settings")
+            yield textual.widgets.Input(
+                placeholder="host (e.g. example.com)", id="host"
+            )
+            yield textual.widgets.Input(placeholder="user", id="user")
+            yield textual.widgets.Input(placeholder="pass", password=True, id="pass")
+            yield textual.widgets.Input(placeholder="path", id="path")
+            yield textual.widgets.Button("Save", variant="primary", id="save")
 
 
 class LoadSSHScreen(textual.screen.ModalScreen):
@@ -88,6 +100,22 @@ class LoadSSHScreen(textual.screen.ModalScreen):
   }
   """
 
+    def action_dismiss(self) -> None:
+        self.dismiss()
+
+    def on_mount(self):
+        self.notify("Load SSH Connection...")
+
+    def compose(self) -> textual.app.ComposeResult:
+        yield textual.widgets.Header()
+        yield textual.widgets.Footer()
+        with textual.containers.Container():
+            yield textual.widgets.Label("Load Saved Connection")
+            yield textual.widgets.ListView(
+                textual.widgets.ListItem(textual.widgets.Label("Connection 1")),
+                textual.widgets.ListItem(textual.widgets.Label("Connection 2")),
+            )
+
 
 class Trees(textual.containers.Horizontal):
     def compose(self) -> textual.app.ComposeResult:
@@ -96,8 +124,12 @@ class Trees(textual.containers.Horizontal):
 
 
 class RemoteTree(textual.widgets.Tree):
-    def compose(self) -> textual.app.ComposeResult:
-        yield textual.widgets.DirectoryTree("./")
+    def __init__(self):
+        super().__init__("Remote")
+        self.root.expand()
+
+    def on_mount(self):
+        self.root.add_leaf("Connect to see remote files ...")
 
 
 if __name__ == "__main__":
