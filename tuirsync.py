@@ -44,26 +44,23 @@ class Menu(textual.screen.ModalScreen):
         with textual.containers.Container():
             yield textual.widgets.Label("Menu")
             yield textual.widgets.ListView(
-                textual.widgets.ListItem(
-                    textual.widgets.Label("0. Settings Save Path")
-                ),
-                textual.widgets.ListItem(textual.widgets.Label("1. New Connection")),
-                textual.widgets.ListItem(textual.widgets.Label("2. Load Connection")),
+                textual.widgets.ListItem(textual.widgets.Label("0. New Connection")),
+                textual.widgets.ListItem(textual.widgets.Label("1. Load Connection")),
             )
 
     def on_list_view_selected(self, event: textual.widgets.ListView.Selected) -> None:
         # Handle menu item selection
+        if event.list_view.index == 0:
+            self.app.push_screen(NewSSHScreen())
 
-        if event.list_view.index == 1:
-            self.app.push_screen(SSHConnectionScreen())
 
-
-class SSHConnectionScreen(textual.screen.ModalScreen):
-    BINDINGS = [("escape,q", "dismiss", "Close SSH Connection Screen")]
+class NewSSHScreen(textual.screen.ModalScreen):
+    # Screen to input SSH connection settings (url, user, pass)
+    BINDINGS = [("escape,q", "dismiss", "Close New SSH Screen")]
 
     CSS = """
-    SSHConnectionScreen { align: center middle; }
-    SSHConnectionScreen > Container {
+    NewSSHScreen { align: center middle; }
+    NewSSHScreen > Container {
         width: 50%;
         height: 75%;
     }
@@ -79,10 +76,23 @@ class SSHConnectionScreen(textual.screen.ModalScreen):
             yield textual.widgets.Label("SSH Connection Settings")
 
 
+class LoadSSHScreen(textual.screen.ModalScreen):
+    # Screen to load earlier saved SSH settings and show them in RemoteTree
+    BINDINGS = [("escape,q", "dismiss", "Close Load SSH Screen")]
+
+    CSS = """
+  LoadSSHScreen { align: center middle; }
+  LoadSSHScreen > Container {
+      width: 50%;
+      height: 75%;
+  }
+  """
+
+
 class Trees(textual.containers.Horizontal):
     def compose(self) -> textual.app.ComposeResult:
         yield textual.widgets.DirectoryTree("./")
-        yield textual.widgets.DirectoryTree("./")
+        yield RemoteTree()
 
 
 class RemoteTree(textual.widgets.Tree):
